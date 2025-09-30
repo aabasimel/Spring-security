@@ -1,4 +1,4 @@
-package org.abasimel.spring_security;
+package org.abasimel.spring_security.model;
 
 public class Student {
 

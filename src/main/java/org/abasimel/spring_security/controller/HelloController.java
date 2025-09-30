@@ -1,7 +1,6 @@
-package org.abasimel.spring_security;
+package org.abasimel.spring_security.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

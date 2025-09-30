@@ -1,6 +1,7 @@
-package org.abasimel.spring_security;
+package org.abasimel.spring_security.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.abasimel.spring_security.model.Student;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
