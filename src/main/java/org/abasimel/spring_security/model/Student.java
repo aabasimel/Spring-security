@@ -1,7 +1,16 @@
 package org.abasimel.spring_security.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+import java.util.UUID;
+
+@Entity
 public class Student {
 
+
+    @Id
     private int id;
     private String name;
     private int marks;

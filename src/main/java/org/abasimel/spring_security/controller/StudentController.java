@@ -3,6 +3,7 @@ package org.abasimel.spring_security.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.abasimel.spring_security.model.Student;
 import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +35,9 @@ public class StudentController {
 
     }
 
+
+
+    @Transactional
     @PostMapping("/students")
     public Student addStudent(@RequestBody Student student){
         students.add(student);

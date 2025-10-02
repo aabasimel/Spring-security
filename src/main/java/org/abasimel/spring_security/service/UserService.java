@@ -3,6 +3,9 @@ package org.abasimel.spring_security.service;
 import org.abasimel.spring_security.model.Users;
 import org.abasimel.spring_security.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,9 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    AuthenticationManager authenticationManager;
+
     private BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder(12);
 
     public Users register(Users user){
@@ -20,4 +26,17 @@ public class UserService {
 
     }
 
+    public String verify(Users user) {
+
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        authentication.isAuthenticated();
+
+        if(authentication.isAuthenticated()){
+            return "Success";
+
+        }
+        return "Fail";
+
+
+    }
 }
